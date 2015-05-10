@@ -2,31 +2,30 @@
 
 // Execute this code only AFTER the document is ready
 // Hint: use jQuery's `$(document).ready`
+
   function Game() {
-  
-      this.turns = 0
-      this.player1 = new Player('X');
-      this.player2 = new Player('O');  
+
+      this.playerX = new Player('X');
+      this.playerO = new Player('O'); 
+      this.board = new Board();
   }
+
   // Remember: prototypes are shared functions between all game instances
-  Game.prototype.nextPlayer = function(currentCell) {
-    console.log("turns works")
-    this.turns ++;
-    console.log(currentCell);
-    if(this.turns%2 !== 0){
-      console.log("player 1")
-      currentCell.css("background-color", "blue");
-    } else {
-      console.log("player 2")
-      currentCell.css("background-color", "red");
-    }
+  Game.prototype.nextPlayer = function() {
+  game.currentPlayer === game.playerX ? game.currentPlayer = game.playerO : game.currentPlayer = game.playerX;
   };
+
+  // Game.prototype.checkWin = function() {
+  // this will go in the nextPlayer function
+  // }
 
   // `Game.prototype.init` kicks off a new game with a board and two players
   Game.prototype.init = function() {
-      // this.$cells = $('.box')
-      console.log("this worked")
-      this.board = new Board();
+    this.currentPlayer = this.playerX
+    $(this.board.$cells).click(function(event){
+      $(event.target).text(game.currentPlayer.team);
+      game.nextPlayer();
+    });
   };
 
   // A starter Player constructor.
@@ -36,15 +35,15 @@
 
   // A starter Board constructor.
   function Board() {
-    this.$cells = $('.box')   
+    //Tracks the cells of the board instance
+    //this.$cells = ...
+    this.$cells = $('.box') 
     //Store any other properties that board may have below, such as a reset option
   };
 
-   Board.prototype.makeMove = function(){
-    this.$cells.click(function(){
-        game.nextPlayer(this.$cells);
-      }
-    });
+  Board.prototype.makeMove = function(player, $cell) {
+    $cell.text(player);
+  }
 
   // Start the game!
   var game = new Game();
