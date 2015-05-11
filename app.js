@@ -1,13 +1,17 @@
 // Creates a new game instance, new board, and new players
+// Also holds turn counter to determine draw conditions
 function Game() {
 
     this.player1 = new Player('X');
     this.player2 = new Player('O');
     this.board = new Board();
+    this.turnCounter = 0;
 }
 
-// This sets the turn without relying on an incrementing counter
+// This sets the turn without relying on the incrementing counter,
+// also calls the win checker and looks for a draw condition
 Game.prototype.nextPlayer = function() {
+    game.turnCounter ++;
     game.board.checkWinner();
     game.currentPlayer === game.player1 ? game.currentPlayer = game.player2 : game.currentPlayer = game.player1;
     $('#turn').text(" Player " + game.currentPlayer.team);
@@ -80,26 +84,37 @@ Board.prototype.winCond = [
 // Checks the board for winning combinations against the value
 // of the players 'team'
 Board.prototype.checkWinner = function() {
-    var hasWon = false;
+    this.hasWon = false;
+
+    if (game.turnCounter === 9 && game.board.hasWon === false) {
+        alert("Everybody is a winner!")
+        game.board.resetBoard();
+    }
+
+   var hasWon = false;
     for (var i = 0; i < this.winCond.length; i++) {
         if (game.board.moveArr[this.winCond[i][0]] === (game.currentPlayer.team) &&
             game.board.moveArr[this.winCond[i][1]] === (game.currentPlayer.team) &&
             game.board.moveArr[this.winCond[i][2]] === (game.currentPlayer.team))
             hasWon = true;
     }
+
     if (hasWon) {
         alert("Player " + game.currentPlayer.team + " has won!")
         game.currentPlayer.playerScore++;
         game.updateScore(game.currentPlayer.team);
+        game.board.resetBoard();
     }
 };
 
 // Generic function to reset the board to its initial state,
 // will be called by the button as a hard reset, and by the
-// winner check 
+// winner check. This also resets the array holding player values
+//and the turn counter.
 Board.prototype.resetBoard = function() {
     game.board.$cells.html('&nbsp;')
     game.board.nullArray();
+    game.turnCounter = 0;
 };
 
 Board.prototype.nullArray = function() {

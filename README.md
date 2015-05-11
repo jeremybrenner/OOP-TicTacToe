@@ -4,21 +4,15 @@
 Full project requirements and instructions are [here](https://github.com/sf-wdi-18/notes/blob/master/projects/project_1.md)! **Read that entire document before writing a line of code.**
 This file is where you will document your project.  
 
-* Fork this repository.
-* Clone this repo, the `Project_1_TTT` repo, from *your* gitHub account onto your computer.
-* Follow the project instructions [here](https://github.com/sf-wdi-18/notes/blob/master/projects/project_1.md).
-* Make your changes in your local `Project_1_TTT` repo.
-* Use either HTML or, even better, [markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) to format this file as you document your project.
-* `git add` and `git commit` your changes as you go.  Remember to say what you did in your commit messages!
-* `git push` to update the repo on your gitHub account.
-* Delete this section, the `Workflow & Submission` section, of this file -- you don't need it in your documentation!
-
+My primary goal for this project was to really focus on the OOP part redesigning my tic-tac-toe game. I tried to make my code modular and seperate events and methods onto their respective prototypes in a way which made sense and allowed for a strong setup to scale and modify. Primarily, I seperated the 'board' from the 'game' object when using methods, and tried to utilize state setting instead of incrementing counter logic. This ended up taking longer then I initially anticipated, and though I am happy with what I accomplished- I would like to add more features to the game. 
 
 ### Technologies Used
-*What technologies did you use while developing this project?*
+For this project my main tools were jQuery, JS, HTML, and CSS
 
 ###Existing features
-*What features does your new tic-tac-toe app have?*
+Compared to my last version, this tic-tac-toe includes a running scoreboard, multiple game feature, and turn tracker. Also includes css animations.
 
 ###Planned features
-*What changes would you make to your project if you continued with it in the future?*
+For the future I would like to add:
+A undo/redo feature
+Overlays to accompany game events (win, lose, draw, etc.)

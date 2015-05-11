@@ -3,17 +3,25 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
+    margin: 40px auto;
+    font-family: 'Amatic SC', cursive;
+    font-size: 70px;
+    color: white;
 }
 
 h2 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Patrick Hand SC', cursive;
+    color: white;
+    font-size: 30px;
 }
 
 html,
 body {
     position: relative;
+    background-color: #494A4D;
 }
 
 table {
@@ -24,11 +32,14 @@ table {
 }
 
 .score {
-    background-color: red;
+    background-color: white;
     width: 400px;
     height: 100px;
     border-radius: 20px;
     margin: 5px auto;
+    border: 8px dotted white;
+    background-color: #494A4D;
+
 
 }
 
@@ -36,24 +47,42 @@ table {
 #player2 {
     margin: 0 auto;
     text-align: center;
+    font-family: 'Patrick Hand SC', cursive;
+    color: white;
+    font-size: 30px;
 }
 
 #currentTurn, #turn{
   text-align: center;
   margin: 10px;
   margin-bottom: 15px;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 40px;
+  color: white;
 }
 
 .box {
-    background-color: red;
+    background-color: #494A4D;
     width: 125px;
     height: 125px;
     border-radius: 20px;
+    font-size: 90px;
+    font-family: 'Patrick Hand SC', cursive;
+    color: white;
+    border: 8px dotted white;
+}
+
+.box:hover
+{
+        -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+        transform: scale(0.9);
 }
 
 #board {
     text-align: center;
     margin: 0 auto;
+
 }
 
 #buttonWrap {
@@ -61,15 +90,16 @@ table {
 }
 
 #reset {
-    height: 50px;
+    height: 45px;
     width: 100px;
     margin: 15px;
-    border-radius: 17px;
+    border-radius: 13px;
     outline: none;
 }
 
 #buttonText {
     text-align: center;
-    padding: 3px;
-    font-size: 22px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+    font-weight: bold;
 }
