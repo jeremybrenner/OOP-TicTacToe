@@ -84,12 +84,6 @@ Board.prototype.winCond = [
 // Checks the board for winning combinations against the value
 // of the players 'team'
 Board.prototype.checkWinner = function() {
-    this.hasWinner = false;
-
-    if (game.turnCounter === 9 && game.board.hasWinner === false) {
-        alert("Everybody is a winner!")
-        game.board.resetBoard();
-    }
 
     var hasWinner = false;
     for (var i = 0; i < this.winCond.length; i++) {
@@ -103,6 +97,13 @@ Board.prototype.checkWinner = function() {
         alert("Player " + game.currentPlayer.team + " has won!")
         game.currentPlayer.playerScore++;
         game.updateScore(game.currentPlayer.team);
+        game.board.resetBoard();
+    }
+
+    this.hasWinner = false;
+
+    if (game.turnCounter === 9 && game.board.hasWinner === false) {
+        alert("Everybody is a winner!")
         game.board.resetBoard();
     }
 };
