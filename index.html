@@ -1,27 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Title</title>
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" type="text/css" href="main.css">
-  <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script> 
+    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
 </head>
+
 <body>
-  <h1>Tic Tac Toe</h1>
- <div id='board'>
-      <div id='0' class='box'>&nbsp;</div>
-      <div id='1' class='box'>&nbsp;</div>
-      <div id='2' class='box'>&nbsp;</div>
-      <div id='3' class='box'>&nbsp;</div>
-      <div id='4' class='box'>&nbsp;</div>
-      <div id='5' class='box'>&nbsp;</div>
-      <div id='6' class='box'>&nbsp;</div>
-      <div id='7' class='box'>&nbsp;</div>
-      <div id='8' class='box'>&nbsp;</div>
+    <h1 class='title'>Lets Play Tic Tac Toe!</h1>
+    <div id='currentTurn'>Current Turn: <span id='turn'>Player X</span>
     </div>
-<button id = "reset">Reset</button>
- <script type="text/javascript" src="app.js"></script>
+    <table id='board'>
+        <tr>
+            <td id='0' class='box'>&nbsp;</td>
+            <td id='1' class='box'>&nbsp;</td>
+            <td id='2' class='box'>&nbsp;</td>
+        </tr>
+        <tr>
+            <td id='3' class='box'>&nbsp;</td>
+            <td id='4' class='box'>&nbsp;</td>
+            <td id='5' class='box'>&nbsp;</td>
+        </tr>
+        <tr>
+            <td id='6' class='box'>&nbsp;</td>
+            <td id='7' class='box'>&nbsp;</td>
+            <td id='8' class='box'>&nbsp;</td>
+        </tr>
+    </table>
+    <h2 class='scoreBoard'>Scoreboard</h2>
+    <table class='score'>
+        <tr>
+            <td id='player1'> Player X : <span id='oneScore'>0</span></td>
+            <td id='player2'> Player O : <span id='twoScore'>0<span></td>
+      </tr>    
+    </table>
+        <div id="buttonWrap">
+            <button id="reset"><span id='buttonText'>Reset</span></button>
+                </div>
+                <script type="text/javascript" src="app.js"></script>
 </body>
+
 </html>
