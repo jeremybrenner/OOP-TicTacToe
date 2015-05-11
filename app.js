@@ -11,7 +11,7 @@ function Game() {
 // This sets the turn without relying on the incrementing counter,
 // also calls the win checker and looks for a draw condition
 Game.prototype.nextPlayer = function() {
-    game.turnCounter ++;
+    game.turnCounter++;
     game.board.checkWinner();
     game.currentPlayer === game.player1 ? game.currentPlayer = game.player2 : game.currentPlayer = game.player1;
     $('#turn').text(" Player " + game.currentPlayer.team);
@@ -84,22 +84,22 @@ Board.prototype.winCond = [
 // Checks the board for winning combinations against the value
 // of the players 'team'
 Board.prototype.checkWinner = function() {
-    this.hasWon = false;
+    this.hasWinner = false;
 
-    if (game.turnCounter === 9 && game.board.hasWon === false) {
+    if (game.turnCounter === 9 && game.board.hasWinner === false) {
         alert("Everybody is a winner!")
         game.board.resetBoard();
     }
 
-   var hasWon = false;
+    var hasWinner = false;
     for (var i = 0; i < this.winCond.length; i++) {
         if (game.board.moveArr[this.winCond[i][0]] === (game.currentPlayer.team) &&
             game.board.moveArr[this.winCond[i][1]] === (game.currentPlayer.team) &&
             game.board.moveArr[this.winCond[i][2]] === (game.currentPlayer.team))
-            hasWon = true;
+            hasWinner = true;
     }
 
-    if (hasWon) {
+    if (hasWinner) {
         alert("Player " + game.currentPlayer.team + " has won!")
         game.currentPlayer.playerScore++;
         game.updateScore(game.currentPlayer.team);
