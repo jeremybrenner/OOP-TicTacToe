@@ -45,6 +45,7 @@ function Player(team) {
 
 // Creates a new board object on game creation, and also
 // creates a null array to hold moves
+// maintains a running state for the gameboard
 function Board() {
 
     this.moveArr = [null, null, null, null, null, null, null, null, null];
@@ -69,7 +70,8 @@ Board.prototype.makeMove = function() {
         alert("This square is already taken!");
     }
 };
-// Array which holds the winning conditipns for the board
+
+// Array which holds the winning conditions for the board
 Board.prototype.winCond = [
 
     [0, 3, 6],
@@ -103,7 +105,7 @@ Board.prototype.checkWinner = function() {
     this.hasWinner = false;
 
     if (game.turnCounter === 9 && game.board.hasWinner === false) {
-        alert("Everybody is a winner!")
+        alert("Its a tie!")
         game.board.resetBoard();
     }
 };
@@ -111,7 +113,7 @@ Board.prototype.checkWinner = function() {
 // Generic function to reset the board to its initial state,
 // will be called by the button as a hard reset, and by the
 // winner check. This also resets the array holding player values
-//and the turn counter.
+// and the turn counter.
 Board.prototype.resetBoard = function() {
     game.board.$cells.html('&nbsp;')
     game.board.nullArray();
