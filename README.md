@@ -1,18 +1,22 @@
-#WDI: First Project
+#OOP Tic-Tac-Toe
 
-###Workflow & Submission
-Full project requirements and instructions are [here](https://github.com/sf-wdi-18/notes/blob/master/projects/project_1.md)! **Read that entire document before writing a line of code.**
-This file is where you will document your project.  
+## Objective
+The point of this project was to build an object oriented, all front-end tic-tac-toe game. A focus of the code was to build something which persisted the state of the board/scores/and turns over the course of the game without using storage.
 
-My primary goal for this project was to really focus on the OOP part redesigning my tic-tac-toe game. I tried to make my code modular and seperate events and methods onto their respective prototypes in a way which made sense and allowed for a strong setup to scale and modify. Primarily, I seperated the 'board' from the 'game' object when using methods, and tried to utilize state setting instead of incrementing counter logic. This ended up taking longer then I initially anticipated, and though I am happy with what I accomplished- I would like to add more features to the game. 
+## Technologies Used
+* Javascript
+* JQuery
+* HTML5
+* CSS3
 
-### Technologies Used
-For this project my main tools were jQuery, JS, HTML, and CSS
+## Existing features
+* Use of CSS effects to add something visually appealing.
+* Scoreboard will track game score
+* Display for current player
+* Allows multiple games to be played
 
-###Existing features
-Compared to my last version, this tic-tac-toe includes a running scoreboard, multiple game feature, and turn tracker. Also includes css animations.
 
-###Planned features
-For the future I would like to add:
-A undo/redo feature
-Overlays to accompany game events (win, lose, draw, etc.)
+## Future changes
+* Add overlays instead of alerts for game result
+* Use local storage to persist scores in case of page refresh
+* Feature to undo/redo moves
